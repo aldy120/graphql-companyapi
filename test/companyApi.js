@@ -20,7 +20,4 @@ describe('graphql', function () {
         done();
       });
   })
-  after(function(done) {
-    process.exit();
-  })
 })

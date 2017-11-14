@@ -23,9 +23,9 @@ type Query {
 		# Slice the result from the end
 		end: Int,
 		# Filter string for area
-		area: String,
+		area: [String],
 		# Filter string for industry
-		industry: String,
+		industry: [String],
 		# The lower bound for number of employees
 		employeeLowerBound: Int,
 		# The upper bound for number of employees
