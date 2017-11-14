@@ -7,7 +7,7 @@
     "start": "nodemon ./src/server.js --exec babel-node -e js",
     "test": "mocha --exit",
     "production": "pm2 start ecosystem.config.yml",
-    "restart": "pm2 start ecosystem.config.yml"
+    "restart": "pm2 restart ecosystem.config.yml"
   },
   "author": "",
   "devDependencies": {
