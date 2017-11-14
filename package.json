@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./src/server.js --exec babel-node -e js",
     "test": "mocha",
-    "production": "node ./src/server.js"
+    "production": "pm2 start ecosystem.config.yml"
   },
   "author": "",
   "devDependencies": {

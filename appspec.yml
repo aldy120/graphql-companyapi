@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files: 
+  - source: /
+    destination: /home/ec2-user/GraphQL-Company-Api
+hooks:
+  AfterInstall:
+    - location: script/install_dependency
+      timeout: 300
+      runas: root
+    - location: script/start_server
+      timeout: 300
+      runas: root
