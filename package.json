@@ -5,7 +5,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "nodemon ./src/server.js --exec babel-node -e js",
-    "test": "mocha --exit",
+    "test": "mocha --exit --timeout 5000",
     "production": "pm2 start ecosystem.config.yml",
     "restart": "pm2 restart ecosystem.config.yml"
   },

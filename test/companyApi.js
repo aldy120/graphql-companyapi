@@ -20,4 +20,34 @@ describe('graphql', function () {
         done();
       });
   })
+  it('Test graph structure', function(done) {
+    request(server)
+      .post('/graphql')
+      .send({
+        query: `
+        {
+          # hello world 公司有個標籤，標籤裡有hello world公司
+          companies(queryString: "hello world") {
+            name,
+            profile {
+              address,
+              industry
+            },
+            tagList {
+              _id
+              name
+              companyList {
+                name,
+                tagList{
+                  _id, 
+                  name
+                }
+              }
+            }
+          }
+        }
+        `
+      })
+      .expect(200, done)
+  })
 })
