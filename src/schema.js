@@ -205,7 +205,7 @@ class Company {
 		return this.tags.map(tagId => {
 			return fetch(`${restApiUrl}/tag/${tagId}`)
 				.then(res => res.json())
-				.then(({_id, tagName: name}) => {
+				.then(({_id, name}) => {
 					return new Tag({_id, name});
 				})
 		});
