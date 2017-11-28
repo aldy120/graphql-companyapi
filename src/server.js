@@ -19,17 +19,13 @@ server.use('/graphiql', graphiqlExpress({
   endpointURL: '/graphql',
   query: `
   {
-    companies(queryString: "hello world") {
+    companies(queryString: "宏達") {
       name
-      _id
-      tags
-      tagList {
-        name
-        _id
-        companyList {
-          name
-          _id
-        }
+      profile {
+        industry
+        category
+        employee
+        address
       }
     }
   }
