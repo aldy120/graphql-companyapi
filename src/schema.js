@@ -175,7 +175,7 @@ type Tag {
 	# 標籤名稱
 	name: String
 	# 公司列表
-	companyList: [Company]
+	companyList(begin: Int = 0, end: Int = 0): [Company]
 	createTime: String
 	updateTime: String
 }
@@ -187,8 +187,8 @@ class Tag {
 		this._id = _id;
 		this.name = name;
 	}
-	companyList() {
-		return fetch(`${restApiUrl}/company/tag/${this._id}`)
+	companyList({begin, end}) {
+		return fetch(`${restApiUrl}/company/tag/${this._id}?begin=${begin}&end=${end}`)
 			.then(res => res.json())
 	}
 }
